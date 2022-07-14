@@ -1,13 +1,276 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  transition: .3s;
+}
+.App{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.loading {
+  height: 100px;
+  width: 100px;
+  padding: 15px;
+  border: 12px solid #ccc;
+  border-right-color: #888;
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+  /* left, top and position just for the demo! */
+  position: absolute;
+  left: 40%;
+  top: 50%;
+}
+
+@keyframes rotate {
+  /* 100% keyframe for  clockwise. 
+     use 0% instead for anticlockwise */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+header{
+  position: relative;
+  margin: 0;
+  padding: 18px 12px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, .2);
+  font-weight: bold;
+}
+header button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+ul{
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.form-input{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  padding: 20px;
+}
+input{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow:3px 3px 12px rgba(0, 0, 0, .2);
+}
+select{
+  width: 50%;
+  align-self: flex-start;
+  float: left;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  box-shadow:3px 3px 12px rgba(0, 0, 0, .2);
+}
+option{
+  padding: 15px;
+}
+
+.container{
+  display: grid;
+  width: 100%;
+  position: relative;
+  padding:0 10%;
+  row-gap: 2rem;
+}
+.country{
+  position: relative;
+  margin: 0;
+  min-height: 350px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, .25);
+}
+.country .flag{
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  padding: 0;
+  margin: 0;
+}
+.country .flag img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  /* object-fit: cover; */
+   
+}
+.country .text{
+  width: 100%;
+  min-height: 50%;
+  padding: 20px;
+  text-align: left;
+}
+.text p{
+  /* padding: 10px; */
+  margin: 0;
+  font-weight: 500;
+}
+.text p span{
+  font-weight: 200;
+}
+.text a h4{
+  padding: 0;
+  margin: 12px 0;
+  text-decoration: underline;
+}
+.details{
+  position: relative;
+  display: grid;
+  margin: 0;
+  width: 100%;
+  padding: 30px;
+}
+.details .detail-img button{
+  margin-bottom: 2.5rem;
+  border: none;
+  outline: none;
+  padding: 4px 9px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, .2);
+}
+.details .img {
+  position: relative;
+  margin:0 ;
+  padding: 0;
+  width: 100%;
+  height: 300px;
+}
+.details .img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+.detail-text .text1{
+  margin-bottom: 2rem;
+}
+.detail-text .text1 h4{
+  margin: 1.5rem 0;
+}
+.detail-text p{
+  margin: 10px 0;
+  font-weight: 500;
+}
+.detail-text p span{
+  font-weight: lighter;
+}
+.detail-text .text2{
+  margin-bottom: 2rem;
+}
+.border{
+  position: relative;
+}
+
+.border .border-name{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.border-name button{
+  padding: 0;
+  margin: 10px;
+  padding: 6px;
+  flex:1 100px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, .2);
+}
+@media screen and (min-width: 1000px) {
+  .form-input{
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 60px;
+  }
+  input {
+    padding: 15px;
+    width: 500px;
+  }
+  select{
+    padding: 15px;
+    float: none;
+    width: 200px;
+  }
+  .container{
+    padding:0 60px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+  }
+  .details{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    padding: 50px;
+  }
+  .details .img{
+    height: 400px;
+  }
+  .detail-text{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem 0 0 0 ;
+    align-items: center;
+  }
+  .detail-text .text2{
+    margin-left: 3rem;
+  }
+  .border{
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  .border-name button{
+    min-width: 100px;
+  }
+  .border >div p{
+    margin-right: 2rem;
+  }
 }
