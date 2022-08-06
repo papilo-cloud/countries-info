@@ -22,7 +22,7 @@ const Country = () => {
         <Link to={`/${data.name.common}`}>
           <h4>{data.name.common}</h4>
         </Link>
-          <p>Population: <span>{data.population}</span></p>
+          <p>Population: <span>{data.population.toLocaleString()}</span></p>
           <p>Region: <span>{data.region}</span></p>
           <p>Capital: <span>{data.capital}</span></p>
       </div>
