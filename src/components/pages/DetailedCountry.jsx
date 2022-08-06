@@ -25,7 +25,12 @@ const DetailedCountry = () => {
         setLoading(false)
     }
     if (loading) {
-        return <div className="loading"></div>
+        return <div className="loading">
+                    <h3>A</h3>
+                    <div class="divv">
+                      <div class="div"></div>
+                    </div>
+            </div>
     }
 
   return (
