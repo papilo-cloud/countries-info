@@ -8,7 +8,7 @@ const Country = () => {
   const {ModeText} = theme
     if (pending) {
         return <div className='loading'>
-                  <h3>A</h3>
+                  <h3>badamasi</h3>
                   <div class="divv">
                   <div class="div"></div>
                   </div>
