@@ -45,7 +45,7 @@ const DetailedCountry = () => {
            <div className="text1">
                 <h4>{count.name}</h4>
                 <p>Native Name: <span>{count.nativeName}</span></p>
-                <p>Population: <span>{count.population}</span></p>
+                <p>Population: <span>{count.population.toLocaleString()}</span></p>
                 <p>Region: <span>{count.region}</span></p>
                 <p>Sub Region: <span>{count.subregion}</span></p>
                 <p>Capital: <span>{count.capital}</span></p>
